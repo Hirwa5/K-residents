@@ -264,11 +264,10 @@ button {
   height: var(--header-h);
   display: flex;
   align-items: center;
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: var(--paper);
   border-bottom: 1px solid var(--line);
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 4px 20px -6px rgba(0, 0, 0, 0.07);
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .site-header .container {
