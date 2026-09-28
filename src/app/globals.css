@@ -628,9 +628,9 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(14, 16, 12, 0.78);
-  border: 1px solid rgba(224, 138, 78, 0.45);
-  color: #fff9f2;
+  background: rgba(14, 16, 12, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
   font-size: 0.73rem;
   letter-spacing: 0.16em;
   font-weight: 700;
@@ -639,11 +639,11 @@ button {
   border-radius: 999px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 
 .hero-eyebrow svg {
-  color: var(--clay);
+  color: #ffffff;
   flex-shrink: 0;
 }
 
@@ -698,7 +698,7 @@ button {
   padding: 92px 0;
   color: var(--on-deep);
   overflow: hidden;
-  background: var(--deep);
+  background: #0d100c;
   border-bottom: 1px solid var(--on-deep-line);
 }
 
@@ -712,17 +712,17 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.25);
-  transform: scale(1.04);
+  filter: brightness(0.68) saturate(1.1);
+  transform: scale(1.02);
 }
 
 .experience-overlay {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(circle at 15% 50%, rgba(193, 101, 47, 0.18) 0%, transparent 60%),
-    linear-gradient(to right, rgba(14, 16, 12, 0.95) 0%, rgba(14, 16, 12, 0.82) 55%, rgba(14, 16, 12, 0.95) 100%),
-    linear-gradient(to top, rgba(14, 16, 12, 0.96) 0%, transparent 40%);
+    radial-gradient(circle at 25% 45%, rgba(10, 12, 8, 0.35) 0%, rgba(10, 12, 8, 0.6) 100%),
+    linear-gradient(to right, rgba(10, 12, 8, 0.72) 0%, rgba(10, 12, 8, 0.45) 50%, rgba(10, 12, 8, 0.72) 100%),
+    linear-gradient(to top, rgba(10, 12, 8, 0.65) 0%, transparent 40%, rgba(10, 12, 8, 0.5) 100%);
 }
 
 .experience-container {
@@ -746,37 +746,42 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(193, 101, 47, 0.22);
-  border: 1px solid rgba(224, 138, 78, 0.45);
-  color: var(--clay-pale);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
   font-size: 0.7rem;
   letter-spacing: 0.18em;
   font-weight: 800;
   padding: 6px 14px;
   border-radius: 999px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   margin-bottom: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .experience-badge svg {
-  color: var(--clay);
+  color: #ffffff;
 }
 
 .experience-title {
   font-family: var(--font-sora), sans-serif;
   font-size: clamp(2rem, 3.8vw, 2.75rem);
   font-weight: 800;
-  color: #fff;
+  color: #ffffff;
   line-height: 1.12;
   letter-spacing: -0.01em;
   margin-bottom: 14px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
 }
 
 .experience-desc {
-  color: var(--on-deep-soft);
-  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.94rem;
   line-height: 1.65;
   max-width: 520px;
   margin-bottom: 32px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
 .experience-cards-grid {
@@ -792,20 +797,20 @@ button {
 }
 
 .glass-stat-card {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(14, 18, 13, 0.45);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 18px;
   padding: 22px 20px;
   transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.45);
 }
 
 .glass-stat-card:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(224, 138, 78, 0.5);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 
 .glass-stat-top {
@@ -821,20 +826,22 @@ button {
   font-weight: 800;
   color: var(--clay-deep);
   line-height: 1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .glass-divider {
   width: 28px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .glass-tag {
   font-size: 0.62rem;
   letter-spacing: 0.12em;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 3px 8px;
   border-radius: 999px;
 }
@@ -854,19 +861,19 @@ button {
 
 .glass-sub {
   font-size: 0.78rem;
-  color: var(--on-deep-soft);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.45;
 }
 
 /* Right: Direct Video Card */
 .video-card-wrap {
-  background: rgba(23, 27, 20, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(14, 18, 13, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.55);
 }
 
 .video-header {
@@ -874,8 +881,8 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(10, 12, 8, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(10, 12, 8, 0.35);
 }
 
 .video-header-left {
@@ -916,7 +923,8 @@ button {
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   padding: 4px 9px;
   border-radius: 6px;
@@ -938,8 +946,8 @@ button {
 
 .video-footer {
   padding: 18px 20px;
-  background: rgba(10, 12, 8, 0.6);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 12, 8, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
   display: flex;
   flex-direction: column;
   gap: 14px;
