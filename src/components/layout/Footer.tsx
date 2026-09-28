@@ -11,7 +11,9 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container footer-row">
         <div className="footer-brand">
-          <Building2 size={18} /> {siteConfig.shortName} Residences · {siteConfig.locationCity}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assets/favicon.jpg" alt={siteConfig.shortName} className="footer-favicon" />
+          <span>{siteConfig.shortName} Residences · {siteConfig.locationCity}</span>
         </div>
         <p>© {currentYear} {siteConfig.shortName}. All rights reserved.</p>
       </div>

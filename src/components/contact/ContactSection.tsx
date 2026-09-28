@@ -159,7 +159,9 @@ export function ContactSection() {
 
             <div className="map-card">
               <div className="map-card-head">
-                <MapPin size={16} /> {siteConfig.shortName} Residences
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/favicon.jpg" alt="" className="map-card-favicon" />
+                <span>{siteConfig.shortName} Residences</span>
               </div>
               <p>{siteConfig.address}</p>
               <div className="map-card-actions">

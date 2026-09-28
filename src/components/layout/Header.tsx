@@ -18,7 +18,8 @@ export function Header() {
         <div className="container">
           <Link href="/" className="brand" aria-label={`${siteConfig.name} Home`}>
             <span className="brand-mark">
-              <Building2 size={20} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/favicon.jpg" alt={siteConfig.name} className="brand-favicon" />
             </span>
             <span className="brand-text">
               <strong>{siteConfig.shortName}</strong>

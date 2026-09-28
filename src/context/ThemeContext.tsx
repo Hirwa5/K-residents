@@ -21,9 +21,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (saved === 'dark' || saved === 'light') {
       setThemeState(saved);
       document.documentElement.setAttribute('data-theme', saved);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setThemeState('dark');
-      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      // Default to light automatically
+      setThemeState('light');
+      document.documentElement.setAttribute('data-theme', 'light');
     }
     setMounted(true);
   }, []);

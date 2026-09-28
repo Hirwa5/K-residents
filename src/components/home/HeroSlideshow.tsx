@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, ArrowRight, Play } from 'lucide-react';
-import { useModal } from '@/context/ModalContext';
+import { ChevronLeft, ChevronRight, ArrowRight, MapPin, ExternalLink } from 'lucide-react';
 
 interface Slide {
   id: number;
@@ -33,9 +32,10 @@ const slides: Slide[] = [
   },
 ];
 
+const AIRBNB_URL = "https://www.airbnb.com/rooms/1449839679066582676?search_mode=regular_search&adults=1&check_in=2026-10-01&check_out=2026-10-06&children=0&infants=0&pets=0&source_impression_id=p3_b866ffc8-ea18-4426-a78a-5be7e9548801_169efb1a-36e5-479e-bbec-3232f6497013_0_1449839679066582676_0&previous_page_section_name=1000&federated_search_id=b866ffc8-ea18-4426-a78a-5be7e9548801_169efb1a-36e5-479e-bbec-3232f6497013_0_1449839679066582676_0";
+
 export function HeroSlideshow() {
   const [current, setCurrent] = useState(0);
-  const { openVideoModal } = useModal();
 
   const nextSlide = useCallback(() => {
     setCurrent((prev) => (prev + 1) % slides.length);
@@ -84,7 +84,11 @@ export function HeroSlideshow() {
       <div className="hero-content">
         <div className="container">
           <div className="hero-body">
-            <span className="hero-eyebrow">Kicukiro · Kigali · Rwanda</span>
+            <div className="hero-eyebrow-wrap">
+              <span className="hero-eyebrow">
+                <MapPin size={13} /> Kicukiro · Kigali · Rwanda
+              </span>
+            </div>
             <h1 className="hero-title">{slides[current].title}</h1>
             <p className="hero-subtitle">{slides[current].subtitle}</p>
 
@@ -92,13 +96,14 @@ export function HeroSlideshow() {
               <Link href="/residences" className="btn btn-primary">
                 View Our Residences <ArrowRight size={16} />
               </Link>
-              <button
-                type="button"
-                className="btn btn-ghost-light"
-                onClick={openVideoModal}
+              <a
+                href={AIRBNB_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-airbnb"
               >
-                <Play size={16} fill="currentColor" /> Watch Virtual Tour
-              </button>
+                <ExternalLink size={15} /> View on Airbnb
+              </a>
             </div>
 
             <div className="hero-dots" role="tablist" aria-label="Slide controls">

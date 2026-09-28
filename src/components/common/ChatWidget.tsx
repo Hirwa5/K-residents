@@ -35,7 +35,8 @@ export function ChatWidget() {
           <div className="chat-head">
             <div className="chat-head-info">
               <span className="chat-avatar">
-                <MessageSquare size={16} />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/favicon.jpg" alt={siteConfig.shortName} className="chat-avatar-img" />
               </span>
               <div>
                 <strong>{siteConfig.shortName} Host</strong>
