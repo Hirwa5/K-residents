@@ -488,17 +488,17 @@ button {
   max-width: 380px;
   margin: 0 auto;
   z-index: 200;
-  background: #141714;
-  color: var(--on-deep);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
   border-radius: 22px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow);
   padding: 16px 20px 18px;
   box-sizing: border-box;
   opacity: 0;
   transform: translateY(-10px) scale(0.97);
   pointer-events: none;
-  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
   max-height: calc(100vh - 28px);
   overflow-y: auto;
   display: flex;
@@ -516,23 +516,23 @@ button {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--on-deep-line);
+  border-bottom: 1px solid var(--line);
 }
 
 .mobile-menu-title {
   font-size: 1.15rem;
   letter-spacing: 0.02em;
   font-weight: 700;
-  color: #fff;
+  color: var(--ink);
 }
 
 .mobile-menu-close {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(247, 244, 238, 0.25);
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--on-deep);
+  border: 1px solid var(--line);
+  background: var(--paper-dim);
+  color: var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -541,7 +541,7 @@ button {
 }
 
 .mobile-menu-close:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--line);
   transform: scale(1.05);
 }
 
@@ -557,8 +557,8 @@ button {
   font-size: 1.08rem;
   font-weight: 600;
   padding: 10px 4px;
-  border-bottom: 1px solid var(--on-deep-line);
-  color: var(--on-deep);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
   opacity: 0.9;
   transition: color 0.2s ease, opacity 0.2s ease;
   display: flex;
@@ -566,12 +566,12 @@ button {
 }
 
 .mobile-menu nav a:hover {
-  color: var(--clay-pale);
+  color: var(--clay);
   opacity: 1;
 }
 
 .mobile-menu nav a.active {
-  color: #e08a4e;
+  color: var(--clay);
   opacity: 1;
   font-weight: 700;
 }
@@ -606,7 +606,7 @@ button {
 .mobile-menu-tagline {
   text-align: center;
   font-size: 0.72rem;
-  color: var(--on-deep-soft);
+  color: var(--stone);
   margin: 12px 0 2px;
 }
 
@@ -2552,10 +2552,11 @@ textarea.field {
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: var(--deep);
-  color: var(--on-deep-soft);
+  background: var(--card);
+  color: var(--stone);
   padding: 36px 0;
-  border-top: 1px solid var(--on-deep-line);
+  border-top: 1px solid var(--line);
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 .footer-row {
@@ -2579,12 +2580,12 @@ textarea.field {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--on-deep);
+  color: var(--ink);
   font-weight: 700;
 }
 
 .footer-brand svg {
-  color: var(--clay-deep);
+  color: var(--clay);
 }
 
 /* ---------- Chat Widget ---------- */
