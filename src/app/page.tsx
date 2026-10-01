@@ -1,17 +1,19 @@
 import { HeroSlideshow } from '@/components/home/HeroSlideshow';
-import { ExperienceSection } from '@/components/home/ExperienceSection';
+import { VirtualTourSection } from '@/components/home/VirtualTourSection';
+import { HospitalitySection } from '@/components/home/HospitalitySection';
 import { TeaserCards } from '@/components/home/TeaserCards';
 import { AmenitiesGrid } from '@/components/home/AmenitiesGrid';
-import { FaqAccordion } from '@/components/home/FaqAccordion';
+import { HomeCalloutBanner } from '@/components/home/HomeCalloutBanner';
 
 export default function HomePage() {
   return (
     <>
       <HeroSlideshow />
-      <ExperienceSection />
+      <VirtualTourSection />
+      <HospitalitySection />
       <TeaserCards />
       <AmenitiesGrid />
-      <FaqAccordion />
+      <HomeCalloutBanner />
     </>
   );
 }

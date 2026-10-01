@@ -25,9 +25,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://karangwasresidences.com'),
+  metadataBase: new URL('https://karangwasresidents.com'),
   title: {
-    default: `${siteConfig.name} — Kicukiro, Kigali`,
+    default: `${siteConfig.name} | Kicukiro, Kigali`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "Kicukiro Kigali accommodation",
     "Kigali airport hotel",
     "Rwanda furnished rentals",
-    "KARANGWA'S Residences",
+    "KARANGWA'S residents",
     "Kigali executive suites",
   ],
   authors: [{ name: siteConfig.name }],

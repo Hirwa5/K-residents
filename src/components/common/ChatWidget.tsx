@@ -6,14 +6,10 @@ import { siteConfig } from '@/data/siteConfig';
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasUnread, setHasUnread] = useState(true);
   const [message, setMessage] = useState('');
 
   const toggleOpen = () => {
-    setIsOpen(!isOpen);
-    if (!isOpen && hasUnread) {
-      setHasUnread(false);
-    }
+    setIsOpen((prev) => !prev);
   };
 
   const handleSendToWhatsApp = (text: string) => {
@@ -67,7 +63,7 @@ export function ChatWidget() {
                   )
                 }
               >
-                I&apos;d like to book a stay — send details
+                I&apos;d like to book a stay. Please send details
               </button>
               <button
                 type="button"
@@ -116,7 +112,7 @@ export function ChatWidget() {
         aria-expanded={isOpen}
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
-        {hasUnread && !isOpen && <span className="chat-badge">1</span>}
+        {!isOpen && <span className="chat-badge" aria-label="1 unread message">1</span>}
       </button>
     </div>
   );

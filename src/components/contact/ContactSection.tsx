@@ -8,7 +8,9 @@ export function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    phone: '',
+    unit: '',
+    viewingTime: '',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -18,13 +20,40 @@ export function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate reliable submission
+    // Format professional WhatsApp message for the host
+    const lines = [
+      `*🅺 Schedule a Viewing Request KARANGWA'S*`,
+      `----------------------------------------`,
+      `*Full Name:* ${formData.name}`,
+      `*Email Address:* ${formData.email}`,
+      `*Phone Number:* ${formData.phone || 'Not provided'}`,
+      `*Unit Interest:* ${formData.unit || 'General inquiry'}`,
+      `*Preferred Viewing Time:* ${formData.viewingTime || 'Flexible'}`,
+      `----------------------------------------`,
+      `*Message:*`,
+      `${formData.message || 'No additional notes'}`,
+    ];
+
+    const messageText = lines.join('\n');
+    const waUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(messageText)}`;
+
+    // Open WhatsApp in a new tab for the host
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+    // Display green success confirmation in the browser for the user
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSubmitted(false), 6000);
-    }, 600);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        unit: '',
+        viewingTime: '',
+        message: '',
+      });
+      setTimeout(() => setSubmitted(false), 9000);
+    }, 400);
   };
 
   const mapEmbedUrl = `https://maps.google.com/maps?q=${siteConfig.coordinates.lat},${siteConfig.coordinates.lng}&z=16&output=embed`;
@@ -37,7 +66,7 @@ export function ContactSection() {
         <div className="section-head center" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
           <h1 className="section-title">Contact & Location</h1>
           <p className="section-desc">
-            Get in touch with us for instant reservations, concierge assistance, or general inquiries.
+            Get in touch with us for instant reservations, schedule a viewing, or general inquiries.
           </p>
         </div>
 
@@ -72,42 +101,54 @@ export function ContactSection() {
           </div>
 
           <div className="contact-card">
+            <h2 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.45rem', fontWeight: 800, marginBottom: '20px', color: 'var(--ink)' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/favicon.jpg"
+                alt={siteConfig.name}
+                style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover', border: '1px solid var(--line)' }}
+              />
+              <span>Schedule a Viewing</span>
+            </h2>
+
             {submitted ? (
               <div
                 style={{
-                  padding: '36px 20px',
+                  padding: '40px 20px',
                   textAlign: 'center',
                   background: 'var(--paper-dim)',
                   borderRadius: '16px',
                   border: '1px solid var(--line)',
                 }}
               >
-                <CheckCircle2 size={44} style={{ color: 'var(--moss)', margin: '0 auto 12px' }} />
-                <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Inquiry Sent Successfully!</h3>
-                <p style={{ color: 'var(--stone)', fontSize: '0.9rem' }}>
-                  Thank you for reaching out. A host from {siteConfig.shortName} will get back to you shortly.
+                <CheckCircle2 size={46} style={{ color: 'var(--moss)', margin: '0 auto 12px' }} />
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '8px', color: 'var(--ink)' }}>
+                  Thank you! Your message has been sent
+                </h3>
+                <p style={{ color: 'var(--stone)', fontSize: '0.9rem', maxWidth: '400px', margin: '0 auto' }}>
+                  Thank you for reaching out. We have received your viewing request and our host will get back to you shortly.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className="form-grid-2">
                   <div>
-                    <label className="field-label">Full Name</label>
+                    <label className="field-label">Full Name *</label>
                     <input
                       type="text"
                       required
-                      placeholder="John Doe"
+                      placeholder="Your full name"
                       className="field"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
                   </div>
                   <div>
-                    <label className="field-label">Email Address</label>
+                    <label className="field-label">Email Address *</label>
                     <input
                       type="email"
                       required
-                      placeholder="you@example.com"
+                      placeholder="your.email@example.com"
                       className="field"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -115,23 +156,66 @@ export function ContactSection() {
                   </div>
                 </div>
 
+                <div className="form-grid-2">
+                  <div>
+                    <label className="field-label">Phone Number *</label>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="+250789119348"
+                      className="field"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    />
+                  </div>
+                  <div>
+                    <label className="field-label">Unit Interest</label>
+                    <select
+                      className="field"
+                      value={formData.unit}
+                      onChange={(e) => setFormData({ ...formData, unit: e.target.value })}
+                    >
+                      <option value="">Select a unit</option>
+                      <option value="Unit 1">
+                        Unit 1
+                      </option>
+                      <option value="Unit 2">
+                        Unit 2
+                      </option>
+                      <option value="Unit 3">
+                        Unit 3
+                      </option>
+                      <option value="Unit 4">
+                        Unit 4
+                      </option>
+                      <option value="Unit 5">
+                        Unit 5
+                      </option>
+                      <option value="Unit 6">
+                        Unit 6
+                      </option>
+                      <option value="General Viewing / Multiple Units">
+                        General Viewing / Multiple Units
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
                 <div className="form-field">
-                  <label className="field-label">Subject</label>
+                  <label className="field-label">Preferred Viewing Time</label>
                   <input
                     type="text"
-                    required
-                    placeholder="Booking Inquiry / Special Request"
+                    placeholder="e.g., Weekday mornings, Saturday afternoon"
                     className="field"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    value={formData.viewingTime}
+                    onChange={(e) => setFormData({ ...formData, viewingTime: e.target.value })}
                   />
                 </div>
 
                 <div className="form-field">
-                  <label className="field-label">Your Message</label>
+                  <label className="field-label">Message (Optional)</label>
                   <textarea
-                    required
-                    placeholder="Tell us about your trip dates, group size, or questions…"
+                    placeholder="Tell us about your housing needs, questions, or any special requirements..."
                     className="field"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -139,7 +223,7 @@ export function ContactSection() {
                 </div>
 
                 <button type="submit" disabled={isSubmitting} className="btn btn-dark btn-block">
-                  {isSubmitting ? 'Sending…' : 'Send Inquiry'}
+                  {isSubmitting ? 'Sending Request…' : 'Schedule a Viewing'}
                 </button>
               </form>
             )}
@@ -161,7 +245,7 @@ export function ContactSection() {
               <div className="map-card-head">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/assets/favicon.jpg" alt="" className="map-card-favicon" />
-                <span>{siteConfig.shortName} Residences</span>
+                <span>{siteConfig.shortName} residents</span>
               </div>
               <p>{siteConfig.address}</p>
               <div className="map-card-actions">

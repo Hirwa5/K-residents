@@ -65,7 +65,7 @@ export function MobileMenu({ isOpen, onClose, currentPath }: MobileMenuProps) {
         href={siteConfig.whatsappUrl}
         target="_blank"
         rel="noreferrer"
-        className="btn btn-primary btn-block"
+        className="btn btn-whatsapp btn-block"
         onClick={onClose}
       >
         <MessageSquare size={16} /> Book via WhatsApp

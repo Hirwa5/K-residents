@@ -22,21 +22,21 @@ export const destinations: DestinationCard[] = [
     title: 'Kigali Int. Airport (KGL)',
     driveTime: '5 - 7 mins drive',
     description: 'Direct shuttle service right to our front gate with zero transit stress.',
-    image: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=900',
+    image: '/images/destinations/kigali-airport.jpg',
   },
   {
     id: 'kigali-convention-centre',
     title: 'Kigali Convention Centre',
     driveTime: '15 mins drive',
     description: 'Easy access for international conference delegates and business events.',
-    image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&q=80&w=900',
+    image: '/images/destinations/kigali-convention-center.jpg',
   },
   {
     id: 'downtown-kigali',
     title: 'Downtown Kigali',
     driveTime: '20 mins drive',
     description: 'Quick commute to banks, commercial hubs, government offices, and dining.',
-    image: 'https://images.unsplash.com/photo-1591018195515-c4a3d8b9d3a3?auto=format&fit=crop&q=80&w=900',
+    image: '/images/destinations/kigali-downtown.jpg',
   },
 ];
 
@@ -52,7 +52,7 @@ export const transportServices: TransportService[] = [
       'Punctual drop-offs ensuring smooth departures',
     ],
     ctaText: 'Book Airport Pickup via WhatsApp',
-    whatsappMessage: 'Hello, I would like to request Airport Pickup / Dropoff service for my stay at KARANGWA\'S Residences.',
+    whatsappMessage: 'Hello, I would like to request Airport Pickup / Dropoff service for my stay at KARANGWA\'S residents.',
   },
   {
     id: 'city-transfers',

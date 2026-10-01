@@ -64,7 +64,7 @@ export function TransportCatalog() {
                 href={getWhatsAppServiceLink(service.whatsappMessage)}
                 target="_blank"
                 rel="noreferrer"
-                className="btn btn-primary"
+                className="btn btn-whatsapp"
               >
                 <MessageSquare size={16} /> {service.ctaText}
               </a>

@@ -12,25 +12,25 @@ interface TeaserItem {
 
 const teasers: TeaserItem[] = [
   {
-    href: '/residences',
+    href: '/residents',
     tag: 'From 35,000 RWF',
-    title: 'Luxury Residences',
-    desc: 'Serviced 2-bedroom suites & deluxe rooms',
-    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=900',
+    title: 'Luxury residents',
+    desc: '6 serviced 1-bedroom apartments',
+    image: '/images/residences/residence-facade.jpg',
   },
   {
     href: '/gallery',
     tag: 'Photo Gallery',
     title: 'Visual Showcase',
     desc: 'Take a virtual tour of bedrooms & lounges',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=900',
+    image: '/images/residences/living-room-lounge.jpg',
   },
   {
     href: '/transport',
     tag: 'Airport Shuttle',
     title: 'Airport & City Rides',
-    desc: '5 mins to Kigali Airport (KGL)',
-    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=900',
+    desc: '15 mins to Kigali Airport (KGL)',
+    image: '/images/destinations/kigali-airport.jpg',
   },
 ];
 

@@ -7,13 +7,13 @@ export interface FaqItem {
 export const faqs: FaqItem[] = [
   {
     id: 'faq-1',
-    question: "Where is KARANGWA'S Residences located?",
-    answer: "We are situated in Kicukiro District, Kigali—just 5 to 7 minutes drive from Kigali International Airport (KGL), with quick access to the Kigali Convention Centre and downtown Kigali.",
+    question: "Where is KARANGWA'S residents located?",
+    answer: "We are situated in Kicukiro District, Kigali, just 5 to 7 minutes drive from Kigali International Airport (KGL), with quick access to the Kigali Convention Centre and downtown Kigali.",
   },
   {
     id: 'faq-2',
     question: "What are the check-in and check-out times?",
-    answer: "Standard check-in begins at 2:00 PM CAT, and check-out is by 11:00 AM CAT. Early check-in or late check-out can usually be accommodated depending on availability—simply notify us in advance.",
+    answer: "Standard check-in begins at 2:00 PM CAT, and check-out is by 11:00 AM CAT. Early check-in or late check-out can usually be accommodated depending on availability. Simply notify us in advance.",
   },
   {
     id: 'faq-3',

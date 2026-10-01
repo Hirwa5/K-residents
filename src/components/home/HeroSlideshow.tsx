@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, ArrowRight, MapPin, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, MapPin } from 'lucide-react';
+import { AirbnbIcon } from '@/components/common/AirbnbIcon';
 
 interface Slide {
   id: number;
@@ -15,19 +16,25 @@ const slides: Slide[] = [
   {
     id: 1,
     title: "Welcome to KARANGWA'S",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1600",
-    subtitle: "Located in Kicukiro, Kigali, just 5 minutes from Kigali International Airport. Experience curated Afro-chic luxury with fully serviced 2-bedroom apartments and single rooms.",
+    image: "/images/residences/residence-facade.jpg",
+    subtitle: "Located in Kicukiro, Kigali, just 15 minutes from Kigali International Airport. Experience curated Afro-chic luxury with fully serviced 2-bedroom apartments and single rooms.",
   },
   {
     id: 2,
     title: "Master Executive Suites",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1600",
+    image: "/images/residences/skyline-bedroom.jpg",
     subtitle: "Crafted for privacy, comfort, and productivity. Featuring expansive private balconies, premium king beds, dedicated work desks, and fast fiber Wi-Fi.",
   },
   {
     id: 3,
-    title: "5 Mins from Kigali Airport",
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=1600",
+    title: "Designer Living & Lounges",
+    image: "/images/residences/living-room-lounge.jpg",
+    subtitle: "Sophisticated interiors with plush seating, smart entertainment, natural light, and fully equipped modern kitchens.",
+  },
+  {
+    id: 4,
+    title: "15 mins from Kigali Airport",
+    image: "/images/destinations/kigali-airport.jpg",
     subtitle: "Seamless private airport pickups and city transfers tailored to your flight schedule, ensuring an effortless arrival into Rwanda's capital.",
   },
 ];
@@ -93,8 +100,8 @@ export function HeroSlideshow() {
             <p className="hero-subtitle">{slides[current].subtitle}</p>
 
             <div className="hero-actions">
-              <Link href="/residences" className="btn btn-primary">
-                View Our Residences <ArrowRight size={16} />
+              <Link href="/residents" className="btn btn-primary">
+                View Our Residents <ArrowRight size={16} />
               </Link>
               <a
                 href={AIRBNB_URL}
@@ -102,7 +109,7 @@ export function HeroSlideshow() {
                 rel="noreferrer"
                 className="btn btn-airbnb"
               >
-                <ExternalLink size={15} /> View on Airbnb
+                <AirbnbIcon size={18} /> View us on Airbnb
               </a>
             </div>
 

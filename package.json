@@ -1,5 +1,5 @@
 {
-  "name": "karangwas-residences",
+  "name": "karangwas-residents",
   "version": "1.0.0",
   "description": "No build step, no dependencies — just open `index.html` in a browser, or upload the whole folder to any web host.",
   "main": "index.js",

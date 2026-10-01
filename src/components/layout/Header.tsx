@@ -23,7 +23,7 @@ export function Header() {
             </span>
             <span className="brand-text">
               <strong>{siteConfig.shortName}</strong>
-              <span>RESIDENCES</span>
+              <span>residents</span>
             </span>
           </Link>
 

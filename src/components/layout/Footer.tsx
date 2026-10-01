@@ -13,7 +13,7 @@ export function Footer() {
         <div className="footer-brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/favicon.jpg" alt={siteConfig.shortName} className="footer-favicon" />
-          <span>{siteConfig.shortName} Residences · {siteConfig.locationCity}</span>
+          <span>{siteConfig.shortName} residents · {siteConfig.locationCity}</span>
         </div>
         <p>© {currentYear} {siteConfig.shortName}. All rights reserved.</p>
       </div>
