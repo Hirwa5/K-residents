@@ -115,7 +115,7 @@ export function AboutPage() {
                   rel="noreferrer"
                   className="btn btn-whatsapp"
                 >
-                  <MessageSquare size={10} /> Chat on WhatsApp
+                  <MessageSquare size={16} /> Chat on WhatsApp
                 </a>
                 <Link href="/contact" className="btn btn-outline-white">
                   Contact Us
