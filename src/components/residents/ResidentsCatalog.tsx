@@ -39,14 +39,14 @@ export function ResidentsCatalog() {
             className={filter === 'row-1' ? 'active' : ''}
             onClick={() => setFilter('row-1')}
           >
-            Ground Floor (Row 1)
+            First Floor (Row 1)
           </button>
           <button
             type="button"
             className={filter === 'row-2' ? 'active' : ''}
             onClick={() => setFilter('row-2')}
           >
-            First Floor (Row 2)
+            Second Floor (Row 2)
           </button>
           <button
             type="button"
